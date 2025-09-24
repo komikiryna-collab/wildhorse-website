@@ -1,1 +1,3 @@
-# wildhorse-website
+wildhorse-website/
+index.html  
+README.md
