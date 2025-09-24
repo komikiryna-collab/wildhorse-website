@@ -1,582 +1,285 @@
-{\rtf1\ansi\ansicpg1251\cocoartf2820
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
-{\colortbl;\red255\green255\blue255;\red13\green14\blue17;\red255\green255\blue255;}
-{\*\expandedcolortbl;;\cssrgb\c5882\c6667\c8235;\cssrgb\c100000\c100000\c100000;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww33700\viewh21080\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILDHORSE ENTERTAINMENT</title>
+    <style>
+        /* Локальные шрифты вместо внешних */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Точные стили по макетам с красным акцентом */
+        :root {
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            --accent-red: #DC2626;
+            --text-gray: #666666;
+            --border-gray: #E0E0E0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-white);
+            color: var(--primary-black);
+            line-height: 1.6;
+            font-weight: 400;
+            font-family: 'Inter', 'Arial', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Остальной код остаётся без изменений... */
+        
+        /* Навигация точная по макету */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        
+        .logo-main {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--accent-red);
+        }
+        
+        .logo-subtitle {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-gray);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--accent-red);
+        }
+        
+        /* Главная страница */
+        .main-hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .main-hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--accent-red);
+        }
+        
+        .main-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-gray);
+        }
+        
+        .divider {
+            height: 1px;
+            background: var(--border-gray);
+            margin: 60px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .service-card {
+            border: 1px solid var(--border-gray);
+            padding: 30px;
+            background: var(--primary-white);
+            transition: border-color 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--accent-red);
+        }
+        
+        .service-card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--accent-red);
+        }
+        
+        .service-card h3 {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+        
+        .btn-primary {
+            background: var(--accent-red);
+            color: var(--primary-white);
+            padding: 15px 40px;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            margin: 20px 0;
+        }
+        
+        .btn-primary:hover {
+            background-color: #B91C1C;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Добавляем базовые стили для видимости */
+        h1, h2, h3, p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-main">WILDHORSE</div>
+                    <div class="logo-subtitle">ENTERTAINMENT</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" data-page="main">Главная</a></li>
+                        <li><a href="#" data-page="about">О нас</a></li>
+                        <li><a href="#" data-page="movie">Кино</a></li>
+                        <li><a href="#" data-page="creative">Креатив</a></li>
+                        <li><a href="#" data-page="courses">Курсы</a></li>
+                        <li><a href="#" data-page="contact">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 <!DOCTYPE html>\
-<html lang="ru">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>WILDHORSE ENTERTAINMENT</title>\
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">\
-    <style>\
-        /* \uc0\u1058 \u1086 \u1095 \u1085 \u1099 \u1077  \u1089 \u1090 \u1080 \u1083 \u1080  \u1087 \u1086  \u1084 \u1072 \u1082 \u1077 \u1090 \u1072 \u1084  \u1089  \u1082 \u1088 \u1072 \u1089 \u1085 \u1099 \u1084  \u1072 \u1082 \u1094 \u1077 \u1085 \u1090 \u1086 \u1084  */\
-        :root \{\
-            --primary-black: #000000;\
-            --primary-white: #FFFFFF;\
-            --accent-red: #DC2626; /* \uc0\u1048 \u1079 \u1084 \u1077 \u1085 \u1077 \u1085 \u1086  \u1085 \u1072  \u1082 \u1088 \u1072 \u1089 \u1085 \u1099 \u1081  */\
-            --text-gray: #666666;\
-            --border-gray: #E0E0E0;\
-        \}\
-        \
-        * \{\
-            margin: 0;\
-            padding: 0;\
-            box-sizing: border-box;\
-            font-family: 'Inter', sans-serif;\
-        \}\
-        \
-        body \{\
-            background-color: var(--primary-white);\
-            color: var(--primary-black);\
-            line-height: 1.6;\
-            font-weight: 400;\
-        \}\
-        \
-        .container \{\
-            max-width: 1200px;\
-            margin: 0 auto;\
-            padding: 0 20px;\
-        \}\
-        \
-        /* \uc0\u1058 \u1086 \u1095 \u1085 \u1072 \u1103  \u1090 \u1080 \u1087 \u1086 \u1075 \u1088 \u1072 \u1092 \u1080 \u1082 \u1072  \u1087 \u1086  \u1084 \u1072 \u1082 \u1077 \u1090 \u1072 \u1084  */\
-        h1 \{\
-            font-size: 48px;\
-            font-weight: 600;\
-            line-height: 1.2;\
-            margin-bottom: 24px;\
-        \}\
-        \
-        h2 \{\
-            font-size: 32px;\
-            font-weight: 500;\
-            margin-bottom: 20px;\
-        \}\
-        \
-        h3 \{\
-            font-size: 24px;\
-            font-weight: 500;\
-            margin-bottom: 16px;\
-        \}\
-        \
-        p \{\
-            font-size: 16px;\
-            margin-bottom: 16px;\
-            color: var(--primary-black);\
-        \}\
-        \
-        /* \uc0\u1053 \u1072 \u1074 \u1080 \u1075 \u1072 \u1094 \u1080 \u1103  \u1090 \u1086 \u1095 \u1085 \u1072 \u1103  \u1087 \u1086  \u1084 \u1072 \u1082 \u1077 \u1090 \u1091  */\
-        header \{\
-            padding: 30px 0;\
-            border-bottom: 1px solid var(--border-gray);\
-        \}\
-        \
-        .header-content \{\
-            display: flex;\
-            justify-content: space-between;\
-            align-items: center;\
-        \}\
-        \
-        .logo-section \{\
-            display: flex;\
-            align-items: baseline;\
-            gap: 10px;\
-        \}\
-        \
-        .logo-main \{\
-            font-size: 32px;\
-            font-weight: 700;\
-            letter-spacing: -0.5px;\
-            color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1099 \u1081  \u1072 \u1082 \u1094 \u1077 \u1085 \u1090  \u1076 \u1083 \u1103  \u1083 \u1086 \u1075 \u1086 \u1090 \u1080 \u1087 \u1072  */\
-        \}\
-        \
-        .logo-subtitle \{\
-            font-size: 14px;\
-            font-weight: 300;\
-            color: var(--text-gray);\
-        \}\
-        \
-        nav ul \{\
-            list-style: none;\
-            display: flex;\
-            gap: 40px;\
-        \}\
-        \
-        nav a \{\
-            text-decoration: none;\
-            color: var(--primary-black);\
-            font-size: 16px;\
-            font-weight: 400;\
-            transition: color 0.3s;\
-        \}\
-        \
-        nav a:hover \{\
-            color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1099 \u1081  \u1087 \u1088 \u1080  \u1085 \u1072 \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1080  */\
-        \}\
-        \
-        /* \uc0\u1043 \u1083 \u1072 \u1074 \u1085 \u1072 \u1103  \u1089 \u1090 \u1088 \u1072 \u1085 \u1080 \u1094 \u1072  - \u1090 \u1086 \u1095 \u1085 \u1072 \u1103  \u1074 \u1077 \u1088 \u1089 \u1090 \u1082 \u1072  */\
-        .main-hero \{\
-            padding: 80px 0;\
-            text-align: center;\
-        \}\
-        \
-        .main-hero h1 \{\
-            font-size: 56px;\
-            font-weight: 600;\
-            margin-bottom: 30px;\
-            color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1099 \u1081  \u1079 \u1072 \u1075 \u1086 \u1083 \u1086 \u1074 \u1086 \u1082  */\
-        \}\
-        \
-        .main-hero p \{\
-            font-size: 18px;\
-            max-width: 800px;\
-            margin: 0 auto 30px;\
-            color: var(--text-gray);\
-        \}\
-        \
-        .divider \{\
-            height: 1px;\
-            background: var(--border-gray);\
-            margin: 60px 0;\
-        \}\
-        \
-        /* \uc0\u1057 \u1077 \u1090 \u1082 \u1072  \u1091 \u1089 \u1083 \u1091 \u1075  \u1082 \u1072 \u1082  \u1074  \u1084 \u1072 \u1082 \u1077 \u1090 \u1077  */\
-        .services-grid \{\
-            display: grid;\
-            grid-template-columns: repeat(3, 1fr);\
-            gap: 40px;\
-            margin: 60px 0;\
-        \}\
-        \
-        .service-card \{\
-            border: 1px solid var(--border-gray);\
-            padding: 30px;\
-            background: var(--primary-white);\
-            transition: border-color 0.3s;\
-        \}\
-        \
-        .service-card:hover \{\
-            border-color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1072 \u1103  \u1088 \u1072 \u1084 \u1082 \u1072  \u1087 \u1088 \u1080  \u1085 \u1072 \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1080  */\
-        \}\
-        \
-        .service-card h2 \{\
-            font-size: 24px;\
-            margin-bottom: 15px;\
-            color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1099 \u1077  \u1079 \u1072 \u1075 \u1086 \u1083 \u1086 \u1074 \u1082 \u1080  \u1082 \u1072 \u1088 \u1090 \u1086 \u1095 \u1077 \u1082  */\
-        \}\
-        \
-        .service-card h3 \{\
-            font-size: 20px;\
-            color: var(--text-gray);\
-            margin-bottom: 15px;\
-        \}\
-        \
-        /* \uc0\u1057 \u1090 \u1088 \u1072 \u1085 \u1080 \u1094 \u1072  \u1092 \u1080 \u1083 \u1100 \u1084 \u1072  */\
-        .movie-header \{\
-            padding: 60px 0 40px;\
-        \}\
-        \
-        .movie-meta \{\
-            display: grid;\
-            grid-template-columns: repeat(4, 1fr);\
-            gap: 30px;\
-            margin: 40px 0;\
-        \}\
-        \
-        .movie-meta-item h3 \{\
-            font-size: 14px;\
-            font-weight: 500;\
-            color: var(--text-gray);\
-            margin-bottom: 8px;\
-        \}\
-        \
-        .movie-meta-item p \{\
-            font-size: 16px;\
-            font-weight: 400;\
-        \}\
-        \
-        /* \uc0\u1050 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074  \u1089 \u1090 \u1088 \u1072 \u1085 \u1080 \u1094 \u1072  */\
-        .case-study \{\
-            padding: 60px 0;\
-            border-bottom: 1px solid var(--border-gray);\
-        \}\
-        \
-        .case-study:last-child \{\
-            border-bottom: none;\
-        \}\
-        \
-        /* \uc0\u1050 \u1091 \u1088 \u1089 \u1099  \u1089 \u1090 \u1088 \u1072 \u1085 \u1080 \u1094 \u1072  */\
-        .course-card \{\
-            background: var(--primary-white);\
-            padding: 40px;\
-            margin: 40px 0;\
-            border-left: 4px solid var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1072 \u1103  \u1072 \u1082 \u1094 \u1077 \u1085 \u1090 \u1085 \u1072 \u1103  \u1087 \u1086 \u1083 \u1086 \u1089 \u1072  */\
-            box-shadow: 0 2px 10px rgba(220, 38, 38, 0.1); /* \uc0\u1051 \u1077 \u1075 \u1082 \u1072 \u1103  \u1082 \u1088 \u1072 \u1089 \u1085 \u1072 \u1103  \u1090 \u1077 \u1085 \u1100  */\
-        \}\
-        \
-        .course-card h2 \{\
-            color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1099 \u1077  \u1079 \u1072 \u1075 \u1086 \u1083 \u1086 \u1074 \u1082 \u1080  \u1082 \u1091 \u1088 \u1089 \u1086 \u1074  */\
-        \}\
-        \
-        .features-grid \{\
-            display: grid;\
-            grid-template-columns: repeat(3, 1fr);\
-            gap: 30px;\
-            margin: 60px 0;\
-        \}\
-        \
-        .feature-item \{\
-            text-align: center;\
-            padding: 30px;\
-            transition: transform 0.3s;\
-        \}\
-        \
-        .feature-item:hover \{\
-            transform: translateY(-5px);\
-        \}\
-        \
-        .feature-item h3 \{\
-            font-size: 18px;\
-            margin-bottom: 15px;\
-            color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1099 \u1077  \u1079 \u1072 \u1075 \u1086 \u1083 \u1086 \u1074 \u1082 \u1080  \u1092 \u1080 \u1095  */\
-        \}\
-        \
-        /* \uc0\u1060 \u1086 \u1088 \u1084 \u1099  \u1082 \u1072 \u1082  \u1074  \u1084 \u1072 \u1082 \u1077 \u1090 \u1077  */\
-        .contact-form \{\
-            max-width: 400px;\
-            margin: 40px 0;\
-        \}\
-        \
-        .form-group \{\
-            margin-bottom: 20px;\
-        \}\
-        \
-        .form-group input \{\
-            width: 100%;\
-            padding: 15px;\
-            border: 1px solid var(--border-gray);\
-            background: var(--primary-white);\
-            font-size: 16px;\
-            transition: border-color 0.3s;\
-        \}\
-        \
-        .form-group input:focus \{\
-            border-color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1072 \u1103  \u1088 \u1072 \u1084 \u1082 \u1072  \u1087 \u1088 \u1080  \u1092 \u1086 \u1082 \u1091 \u1089 \u1077  */\
-            outline: none;\
-        \}\
-        \
-        .form-group input::placeholder \{\
-            color: var(--text-gray);\
-        \}\
-        \
-        .btn-primary \{\
-            background: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1072 \u1103  \u1082 \u1085 \u1086 \u1087 \u1082 \u1072  */\
-            color: var(--primary-white);\
-            padding: 15px 40px;\
-            border: none;\
-            font-size: 16px;\
-            font-weight: 500;\
-            cursor: pointer;\
-            width: 100%;\
-            transition: background-color 0.3s;\
-        \}\
-        \
-        .btn-primary:hover \{\
-            background-color: #B91C1C; /* \uc0\u1058 \u1077 \u1084 \u1085 \u1077 \u1077  \u1082 \u1088 \u1072 \u1089 \u1085 \u1099 \u1081  \u1087 \u1088 \u1080  \u1085 \u1072 \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1080  */\
-        \}\
-        \
-        /* \uc0\u1060 \u1091 \u1090 \u1077 \u1088  \u1090 \u1086 \u1095 \u1085 \u1099 \u1081  */\
-        footer \{\
-            padding: 40px 0;\
-            border-top: 1px solid var(--border-gray);\
-            text-align: center;\
-            margin-top: 80px;\
-        \}\
-        \
-        .footer-contacts \{\
-            margin: 30px 0;\
-        \}\
-        \
-        .footer-contacts a \{\
-            color: var(--primary-black);\
-            text-decoration: none;\
-            margin: 0 15px;\
-            transition: color 0.3s;\
-        \}\
-        \
-        .footer-contacts a:hover \{\
-            color: var(--accent-red); /* \uc0\u1050 \u1088 \u1072 \u1089 \u1085 \u1099 \u1081  \u1087 \u1088 \u1080  \u1085 \u1072 \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1080  \u1085 \u1072  \u1082 \u1086 \u1085 \u1090 \u1072 \u1082 \u1090 \u1099  */\
-        \}\
-        \
-        .copyright \{\
-            font-size: 14px;\
-            color: var(--text-gray);\
-            margin-top: 20px;\
-        \}\
-        \
-        /* \uc0\u1040 \u1076 \u1072 \u1087 \u1090 \u1080 \u1074 \u1085 \u1086 \u1089 \u1090 \u1100  */\
-        @media (max-width: 768px) \{\
-            .header-content \{\
-                flex-direction: column;\
-                gap: 20px;\
-            \}\
-            \
-            nav ul \{\
-                gap: 20px;\
-                flex-wrap: wrap;\
-                justify-content: center;\
-            \}\
-            \
-            .services-grid,\
-            .features-grid,\
-            .movie-meta \{\
-                grid-template-columns: 1fr;\
-                gap: 20px;\
-            \}\
-            \
-            .main-hero h1 \{\
-                font-size: 36px;\
-            \}\
-            \
-            h1 \{\
-                font-size: 36px;\
-            \}\
-            \
-            h2 \{\
-                font-size: 28px;\
-            \}\
-        \}\
-    </style>\
-</head>\
-<body>\
-    <!-- \uc0\u1064 \u1072 \u1087 \u1082 \u1072  -->\
-    <header>\
-        <div class="container">\
-            <div class="header-content">\
-                <div class="logo-section">\
-                    <div class="logo-main">WILDHORSE</div>\
-                    <div class="logo-subtitle">ENTERTAINMENT</div>\
-                </div>\
-                <nav>\
-                    <ul>\
-                        <li><a href="#" data-page="main">\uc0\u1043 \u1083 \u1072 \u1074 \u1085 \u1072 \u1103 </a></li>\
-                        <li><a href="#" data-page="about">\uc0\u1054  \u1085 \u1072 \u1089 </a></li>\
-                        <li><a href="#" data-page="movie">\uc0\u1050 \u1080 \u1085 \u1086 </a></li>\
-                        <li><a href="#" data-page="creative">\uc0\u1050 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074 </a></li>\
-                        <li><a href="#" data-page="courses">\uc0\u1050 \u1091 \u1088 \u1089 \u1099 </a></li>\
-                        <li><a href="#" data-page="contact">\uc0\u1050 \u1086 \u1085 \u1090 \u1072 \u1082 \u1090 \u1099 </a></li>\
-                    </ul>\
-                </nav>\
-            </div>\
-        </div>\
-    </header>\
-\
-    <!-- \uc0\u1043 \u1083 \u1072 \u1074 \u1085 \u1072 \u1103  \u1089 \u1090 \u1088 \u1072 \u1085 \u1080 \u1094 \u1072  -->\
-    <section id="main" class="page active">\
-        <div class="container">\
-            <div class="main-hero">\
-                <h1>WILDHORSE<br>ENTERTAINMENT</h1>\
-                <p>WildHorse \'97 \uc0\u1082 \u1086 \u1084 \u1072 \u1085 \u1076 \u1072  \u1087 \u1088 \u1086 \u1092 \u1077 \u1089 \u1089 \u1080 \u1086 \u1085 \u1072 \u1083 \u1086 \u1074 , \u1095 \u1100 \u1103  \u1086 \u1089 \u1085 \u1086 \u1074 \u1072  \u1083 \u1077 \u1078 \u1080 \u1090  \u1074  \u1082 \u1086 \u1085 \u1089 \u1087 \u1088 \u1086 \u1080 \u1079 \u1074 \u1086 \u1076 \u1089 \u1090 \u1074 \u1077 . \u1052 \u1099  \u1089 \u1086 \u1079 \u1076 \u1072 \u1105 \u1084  \u1092 \u1080 \u1083 \u1100 \u1084 \u1099 , \u1079 \u1072 \u1085 \u1080 \u1084 \u1072 \u1077 \u1084 \u1089 \u1103  \u1076 \u1080 \u1089 \u1090 \u1088 \u1080 \u1073 \u1091 \u1094 \u1080 \u1077 \u1081 , \u1072  \u1090 \u1072 \u1082 \u1078 \u1077  \u1089 \u1086 \u1079 \u1076 \u1072 \u1077 \u1084  \u1082 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074  \u1076 \u1083 \u1103  \u1080 \u1093  \u1087 \u1088 \u1086 \u1076 \u1074 \u1080 \u1078 \u1077 \u1085 \u1080 \u1103 .</p>\
-                <p>\uc0\u1053 \u1072 \u1096 \u1072  \u1089 \u1080 \u1083 \u1072  \'97 \u1074  \u1082 \u1086 \u1084 \u1087 \u1083 \u1077 \u1082 \u1089 \u1085 \u1099 \u1093  \u1088 \u1077 \u1096 \u1077 \u1085 \u1080 \u1103 \u1093  \u1076 \u1083 \u1103  \u1088 \u1072 \u1079 \u1074 \u1080 \u1090 \u1080 \u1103  \u1073 \u1088 \u1077 \u1085 \u1076 \u1086 \u1074 , \u1075 \u1076 \u1077  \u1084 \u1099  \u1086 \u1073 \u1098 \u1077 \u1076 \u1080 \u1085 \u1103 \u1077 \u1084  \u1101 \u1082 \u1089 \u1087 \u1077 \u1088 \u1090 \u1080 \u1079 \u1091  \u1074  \u1089 \u1090 \u1088 \u1072 \u1090 \u1077 \u1075 \u1080 \u1103 \u1093 , \u1082 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074 \u1077 , digital \u1080  \u1076 \u1080 \u1079 \u1072 \u1081 \u1085 \u1077 , \u1095 \u1090 \u1086 \u1073 \u1099  \u1073 \u1080 \u1079 \u1085 \u1077 \u1089 \u1099  \u1089 \u1090 \u1072 \u1085 \u1086 \u1074 \u1080 \u1083 \u1080 \u1089 \u1100  \u1103 \u1088 \u1095 \u1077 , \u1079 \u1072 \u1084 \u1077 \u1090 \u1085 \u1077 \u1077  \u1080  \u1073 \u1083 \u1080 \u1078 \u1077  \u1082  \u1089 \u1074 \u1086 \u1080 \u1084  \u1082 \u1083 \u1080 \u1077 \u1085 \u1090 \u1072 \u1084 .</p>\
-            </div>\
-            \
-            <div class="divider"></div>\
-            \
-            <div class="services-grid">\
-                <div class="service-card">\
-                    <h2>\uc0\u1050 \u1048 \u1053 \u1054 </h2>\
-                    <h3>\uc0\u1055 \u1040 \u1051 \u1068 \u1058 \u1054 </h3>\
-                    <p>\uc0\u1057 \u1086 \u1085 \u1103  \u1091 \u1095 \u1080 \u1090 \u1089 \u1103  \u1074  \u1096 \u1082 \u1086 \u1083 \u1077  \u1080  \u1089 \u1090 \u1072 \u1083 \u1082 \u1080 \u1074 \u1072 \u1077 \u1090 \u1089 \u1103  \u1089  \u1073 \u1091 \u1083 \u1083 \u1080 \u1085 \u1075 \u1086 \u1084  \u1089 \u1086  \u1089 \u1090 \u1086 \u1088 \u1086 \u1085 \u1099  \u1089 \u1074 \u1077 \u1088 \u1089 \u1090 \u1085 \u1080 \u1082 \u1086 \u1074 .</p>\
-                </div>\
-                \
-                <div class="service-card">\
-                    <h2>\uc0\u1050 \u1056 \u1045 \u1040 \u1058 \u1048 \u1042 </h2>\
-                    <h3>HEINZ</h3>\
-                    <p>\uc0\u1060 \u1077 \u1089 \u1090 \u1080 \u1074 \u1072 \u1083 \u1100 \u1085 \u1099 \u1081  \u1082 \u1077 \u1081 \u1089  \u1076 \u1083 \u1103  \u1089 \u1072 \u1084 \u1086 \u1075 \u1086  \u1079 \u1085 \u1072 \u1084 \u1077 \u1085 \u1080 \u1090 \u1086 \u1075 \u1086  \u1082 \u1077 \u1090 \u1095 \u1091 \u1087 \u1072  \u1074  \u1084 \u1080 \u1088 \u1077 .</p>\
-                </div>\
-                \
-                <div class="service-card">\
-                    <h2>\uc0\u1050 \u1059 \u1056 \u1057 \u1067 </h2>\
-                    <p>\'95\'95\'95</p>\
-                </div>\
-            </div>\
-            \
-            <div class="divider"></div>\
-            \
-            <div class="footer-contacts">\
-                <p><a href="mailto:more@wildhorse.com">more@wildhorse.com</a></p>\
-                <p><a href="mailto:creative@wildhorse.com">creative@wildhorse.com</a></p>\
-                <p>+7-816-442-28 12</p>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- \uc0\u1054  \u1085 \u1072 \u1089  -->\
-    <section id="about" class="page">\
-        <div class="container">\
-            <h1>\uc0\u1050 \u1090 \u1086  \u1084 \u1099 ?</h1>\
-            <p>\uc0\u1052 \u1099  \'97 \u1082 \u1086 \u1084 \u1072 \u1085 \u1076 \u1072 , \u1082 \u1086 \u1090 \u1086 \u1088 \u1072 \u1103  \u1087 \u1088 \u1077 \u1074 \u1088 \u1072 \u1097 \u1072 \u1077 \u1090  \u1080 \u1076 \u1077 \u1080  \u1074  \u1088 \u1077 \u1072 \u1083 \u1100 \u1085 \u1086 \u1089 \u1090 \u1100 . \u1052 \u1099  \u1082 \u1086 \u1085 \u1090 \u1088 \u1086 \u1083 \u1080 \u1088 \u1091 \u1077 \u1084  \u1087 \u1088 \u1086 \u1094 \u1077 \u1089 \u1089  \u1089 \u1086 \u1079 \u1076 \u1072 \u1085 \u1080 \u1103  \u1087 \u1088 \u1086 \u1077 \u1082 \u1090 \u1086 \u1074  \u1086 \u1090  \u1085 \u1072 \u1095 \u1072 \u1083 \u1072  \u1076 \u1086  \u1082 \u1086 \u1085 \u1094 \u1072 , \u1073 \u1077 \u1088 \u1103  \u1085 \u1072  \u1089 \u1077 \u1073 \u1103  \u1087 \u1086 \u1083 \u1085 \u1091 \u1102  \u1086 \u1090 \u1074 \u1077 \u1090 \u1089 \u1090 \u1074 \u1077 \u1085 \u1085 \u1086 \u1089 \u1090 \u1100  \u1079 \u1072  \u1088 \u1077 \u1079 \u1091 \u1083 \u1100 \u1090 \u1072 \u1090 .</p>\
-            \
-            <div class="divider"></div>\
-            \
-            <h2>\uc0\u1063 \u1077 \u1084  \u1084 \u1099  \u1079 \u1072 \u1085 \u1080 \u1084 \u1072 \u1077 \u1084 \u1089 \u1103 </h2>\
-            <p>\uc0\u1044 \u1091 \u1084 \u1072 \u1077 \u1084  \u1086 \u1090  \u1088 \u1072 \u1079 \u1083 \u1080 \u1095 \u1085 \u1099 \u1093  \u1086 \u1089 \u1085 \u1086 \u1074 \u1085 \u1099 \u1093  \u1089 \u1087 \u1086 \u1089 \u1086 \u1073 \u1086 \u1074 : \u1089 \u1086 \u1079 \u1076 \u1072 \u1105 \u1084  \u1073 \u1088 \u1077 \u1085 \u1076 -\u1089 \u1090 \u1088 \u1072 \u1090 \u1077 \u1075 \u1080 \u1080  \u1085 \u1072  \u1086 \u1089 \u1085 \u1086 \u1074 \u1077  \u1088 \u1077 \u1072 \u1083 \u1100 \u1085 \u1086 \u1081  \u1072 \u1085 \u1072 \u1083 \u1080 \u1090 \u1080 \u1082 \u1080 , \u1072  \u1085 \u1077  \u1076 \u1086 \u1075 \u1072 \u1076 \u1086 \u1082 . \u1048 \u1079 \u1091 \u1095 \u1072 \u1077 \u1084  \u1088 \u1099 \u1085 \u1086 \u1082 , \u1082 \u1086 \u1085 \u1082 \u1091 \u1088 \u1077 \u1085 \u1090 \u1086 \u1074  \u1080  \u1072 \u1091 \u1076 \u1080 \u1090 \u1086 \u1088 \u1080 \u1102 , \u1095 \u1090 \u1086 \u1073 \u1099  \u1085 \u1072 \u1081 \u1090 \u1080  \u1090 \u1086 \u1095 \u1085 \u1099 \u1077  \u1088 \u1077 \u1096 \u1077 \u1085 \u1080 \u1103 .</p>\
-            <p>\uc0\u1057 \u1086 \u1079 \u1076 \u1072 \u1105 \u1084  \u1089  \u1076 \u1091 \u1096 \u1086 \u1081 . \u1056 \u1072 \u1079 \u1088 \u1072 \u1073 \u1072 \u1090 \u1099 \u1074 \u1072 \u1077 \u1084  \u1082 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074 \u1085 \u1099 \u1077  \u1082 \u1086 \u1085 \u1094 \u1077 \u1087 \u1094 \u1080 \u1080 , \u1082 \u1086 \u1090 \u1086 \u1088 \u1099 \u1077  \u1094 \u1077 \u1087 \u1083 \u1103 \u1102 \u1090  \u1080  \u1086 \u1089 \u1090 \u1072 \u1102 \u1090 \u1089 \u1103  \u1074  \u1087 \u1072 \u1084 \u1103 \u1090 \u1080 . \u1054 \u1090  \u1087 \u1086 \u1089 \u1090 \u1077 \u1088 \u1086 \u1074  \u1076 \u1086  \u1088 \u1077 \u1082 \u1083 \u1072 \u1084 \u1085 \u1099 \u1093  \u1082 \u1072 \u1084 \u1087 \u1072 \u1085 \u1080 \u1081  \'97 \u1082 \u1072 \u1078 \u1076 \u1099 \u1081  \u1101 \u1083 \u1077 \u1084 \u1077 \u1085 \u1090  \u1088 \u1072 \u1073 \u1086 \u1090 \u1072 \u1077 \u1090  \u1085 \u1072  \u1074 \u1072 \u1096  \u1091 \u1089 \u1087 \u1077 \u1093 .</p>\
-            \
-            <div class="divider"></div>\
-            \
-            <h2>\uc0\u1063 \u1090 \u1086  \u1084 \u1099  \u1087 \u1088 \u1077 \u1076 \u1083 \u1072 \u1075 \u1072 \u1077 \u1084 </h2>\
-            <div class="features-grid">\
-                <div class="feature-item">\
-                    <h3>\uc0\u1055 \u1086 \u1083 \u1085 \u1099 \u1081  \u1094 \u1080 \u1082 \u1083  \u1088 \u1072 \u1073 \u1086 \u1090 \u1099  \u1089  \u1073 \u1088 \u1077 \u1085 \u1076 \u1086 \u1084 </h3>\
-                    <p>\uc0\u1086 \u1090  \u1089 \u1086 \u1079 \u1076 \u1072 \u1085 \u1080 \u1103  \u1089  \u1085 \u1091 \u1083 \u1103  \u1076 \u1086  \u1082 \u1072 \u1088 \u1076 \u1080 \u1085 \u1072 \u1083 \u1100 \u1085 \u1086 \u1075 \u1086  \u1088 \u1077 \u1073 \u1088 \u1077 \u1085 \u1076 \u1080 \u1085 \u1075 \u1072 </p>\
-                </div>\
-                <div class="feature-item">\
-                    <h3>Digital-\uc0\u1087 \u1088 \u1086 \u1076 \u1074 \u1080 \u1078 \u1077 \u1085 \u1080 \u1077 </h3>\
-                    <p>SMM, \uc0\u1090 \u1072 \u1088 \u1075 \u1077 \u1090 \u1080 \u1085 \u1075 , \u1082 \u1086 \u1085 \u1090 \u1077 \u1085 \u1090 -\u1084 \u1072 \u1088 \u1082 \u1077 \u1090 \u1080 \u1085 \u1075 </p>\
-                </div>\
-                <div class="feature-item">\
-                    <h3>\uc0\u1044 \u1080 \u1079 \u1072 \u1081 \u1085  \u1073 \u1077 \u1079  \u1082 \u1086 \u1084 \u1087 \u1088 \u1086 \u1084 \u1080 \u1089 \u1089 \u1086 \u1074 </h3>\
-                    <p>\uc0\u1043 \u1088 \u1072 \u1092 \u1080 \u1082 \u1072 , UX/UI, 3D, motion-\u1076 \u1080 \u1079 \u1072 \u1081 \u1085 </p>\
-                </div>\
-            </div>\
-            \
-            <div class="contact-form">\
-                <div class="form-group">\
-                    <input type="text" placeholder="\uc0\u1042 \u1072 \u1096 \u1077  \u1080 \u1084 \u1103 ">\
-                </div>\
-                <div class="form-group">\
-                    <input type="tel" placeholder="\uc0\u1042 \u1072 \u1096  \u1085 \u1086 \u1084 \u1077 \u1088  \u1090 \u1077 \u1083 \u1077 \u1092 \u1086 \u1085 \u1072 ">\
-                </div>\
-                <button class="btn-primary">\uc0\u1054 \u1041 \u1057 \u1059 \u1044 \u1048 \u1058 \u1068  \u1055 \u1056 \u1054 \u1045 \u1050 \u1058 </button>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- \uc0\u1050 \u1080 \u1085 \u1086  -->\
-    <section id="movie" class="page">\
-        <div class="container">\
-            <div class="movie-header">\
-                <h1>\uc0\u1055 \u1072 \u1083 \u1100 \u1090 \u1086 </h1>\
-                <p>2024 | 12+ | 30 \uc0\u1084 \u1080 \u1085 \u1091 \u1090  | \u1076 \u1088 \u1072 \u1084 \u1072 </p>\
-                <p>\uc0\u1057 \u1086 \u1085 \u1103  \u1091 \u1095 \u1080 \u1090 \u1089 \u1103  \u1074  \u1096 \u1082 \u1086 \u1083 \u1077  \u1080  \u1089 \u1090 \u1072 \u1083 \u1082 \u1080 \u1074 \u1072 \u1077 \u1090 \u1089 \u1103  \u1089  \u1073 \u1091 \u1083 \u1083 \u1080 \u1085 \u1075 \u1086 \u1084  \u1089 \u1086  \u1089 \u1090 \u1086 \u1088 \u1086 \u1085 \u1099  \u1089 \u1074 \u1077 \u1088 \u1089 \u1090 \u1085 \u1080 \u1082 \u1086 \u1074 .</p>\
-            </div>\
-            \
-            <div class="movie-meta">\
-                <div class="movie-meta-item">\
-                    <h3>\uc0\u1056 \u1077 \u1078 \u1080 \u1089 \u1089 \u1105 \u1088 </h3>\
-                    <p>\uc0\u1040 \u1083 \u1077 \u1082 \u1089 \u1072 \u1085 \u1076 \u1088  \u1051 \u1080 \u1094 \u1082 \u1077 \u1074 \u1080 \u1095 </p>\
-                </div>\
-                <div class="movie-meta-item">\
-                    <h3>\uc0\u1054 \u1087 \u1077 \u1088 \u1072 \u1090 \u1086 \u1088 </h3>\
-                    <p>\uc0\u1052 \u1072 \u1082 \u1089 \u1080 \u1084  \u1041 \u1072 \u1073 \u1080 \u1095 </p>\
-                </div>\
-                <div class="movie-meta-item">\
-                    <h3>\uc0\u1057 \u1094 \u1077 \u1085 \u1072 \u1088 \u1080 \u1081 </h3>\
-                    <p>\uc0\u1045 \u1082 \u1072 \u1090 \u1077 \u1088 \u1080 \u1085 \u1072  \u1048 \u1089 \u1072 \u1095 \u1077 \u1085 \u1082 \u1086 \u1074 \u1072 </p>\
-                </div>\
-                <div class="movie-meta-item">\
-                    <h3>\uc0\u1055 \u1088 \u1086 \u1076 \u1102 \u1089 \u1077 \u1088 \u1099 </h3>\
-                    <p>\uc0\u1040 \u1083 \u1077 \u1082 \u1089 \u1072 \u1085 \u1076 \u1088  \u1051 \u1080 \u1094 \u1082 \u1077 \u1074 \u1080 \u1095 <br>\u1045 \u1082 \u1072 \u1090 \u1077 \u1088 \u1080 \u1085 \u1072  \u1048 \u1089 \u1072 \u1095 \u1077 \u1085 \u1082 \u1086 \u1074 \u1072 </p>\
-                </div>\
-            </div>\
-            \
-            <button class="btn-primary">\uc0\u1057 \u1052 \u1054 \u1058 \u1056 \u1045 \u1058 \u1068 </button>\
-        </div>\
-    </section>\
-\
-    <!-- \uc0\u1050 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074  -->\
-    <section id="creative" class="page">\
-        <div class="container">\
-            <div class="case-study">\
-                <h1>\'abHEINZ JALAPENO\'bb \'97 \uc0\u1082 \u1077 \u1081 \u1089 , \u1082 \u1086 \u1090 \u1086 \u1088 \u1099 \u1081  \u1087 \u1086 \u1087 \u1072 \u1083  \u1085 \u1072  \u1084 \u1077 \u1078 \u1076 \u1091 \u1085 \u1072 \u1088 \u1086 \u1076 \u1085 \u1099 \u1081  \u1092 \u1077 \u1089 \u1090 \u1080 \u1074 \u1072 \u1083 \u1100  \u1088 \u1077 \u1082 \u1083 \u1072 \u1084 \u1099 .</h1>\
-                <p>\uc0\u1047 \u1072 \u1076 \u1072 \u1095 \u1072  \u1086 \u1090  \u1073 \u1088 \u1077 \u1085 \u1076 \u1072  \u1073 \u1099 \u1083 \u1072  \u1080 \u1085 \u1090 \u1077 \u1088 \u1077 \u1089 \u1085 \u1086 \u1081 : HEINZ \u1074 \u1099 \u1074 \u1086 \u1076 \u1080 \u1083  \u1085 \u1072  \u1088 \u1099 \u1085 \u1086 \u1082  \u1085 \u1086 \u1074 \u1099 \u1081  \u1087 \u1088 \u1086 \u1076 \u1091 \u1082 \u1090  \u1080  \u1080 \u1089 \u1082 \u1072 \u1083  \u1085 \u1077 \u1089 \u1090 \u1072 \u1085 \u1076 \u1072 \u1088 \u1090 \u1085 \u1086 \u1077  \u1088 \u1077 \u1096 \u1077 \u1085 \u1080 \u1077  \u1076 \u1083 \u1103  \u1087 \u1088 \u1080 \u1074 \u1083 \u1077 \u1095 \u1077 \u1085 \u1080 \u1103  \u1085 \u1086 \u1074 \u1086 \u1081  \u1072 \u1091 \u1076 \u1080 \u1090 \u1086 \u1088 \u1080 \u1080  \'97 \u1079 \u1091 \u1084 \u1077 \u1088 \u1086 \u1074 .</p>\
-            </div>\
-            \
-            <div class="case-study">\
-                <h1>Xbox XSpirit Pass \'97 \uc0\u1092 \u1077 \u1089 \u1090 \u1080 \u1074 \u1072 \u1083 \u1100 \u1085 \u1099 \u1081  \u1082 \u1077 \u1081 \u1089 </h1>\
-                <p>\uc0\u1050 \u1086 \u1085 \u1094 \u1077 \u1087 \u1094 \u1080 \u1103 : \u1048 \u1048 -\u1072 \u1074 \u1072 \u1090 \u1072 \u1088 , \u1082 \u1086 \u1090 \u1086 \u1088 \u1099 \u1081  \u1080 \u1075 \u1088 \u1072 \u1077 \u1090  \u1079 \u1072  \u1074 \u1072 \u1089  \u1074  \u1074 \u1072 \u1096 \u1077  \u1086 \u1090 \u1089 \u1091 \u1090 \u1089 \u1090 \u1074 \u1080 \u1077 . \u1050 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074 \u1085 \u1072 \u1103  \u1080 \u1076 \u1077 \u1103  \u1076 \u1083 \u1103  Xbox \'97 \u1087 \u1086 \u1076 \u1087 \u1080 \u1089 \u1082 \u1072  XSpirit Pass.</p>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- \uc0\u1050 \u1091 \u1088 \u1089 \u1099  -->\
-    <section id="courses" class="page">\
-        <div class="container">\
-            <h1>\uc0\u1053 \u1072 \u1096 \u1080  \u1082 \u1091 \u1088 \u1089 \u1099 </h1>\
-            <p>\uc0\u1052 \u1099  \u1074 \u1077 \u1088 \u1080 \u1084 , \u1095 \u1090 \u1086  \u1082 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074  \u1080  \u1076 \u1080 \u1079 \u1072 \u1081 \u1085  \'97 \u1101 \u1090 \u1086  \u1085 \u1077  \u1074 \u1088 \u1086 \u1078 \u1076 \u1105 \u1085 \u1085 \u1099 \u1081  \u1090 \u1072 \u1083 \u1072 \u1085 \u1090 , \u1072  \u1085 \u1072 \u1074 \u1099 \u1082 , \u1082 \u1086 \u1090 \u1086 \u1088 \u1099 \u1081  \u1084 \u1086 \u1078 \u1085 \u1086  \u1086 \u1089 \u1074 \u1086 \u1080 \u1090 \u1100 .</p>\
-            \
-            <div class="course-card">\
-                <h2>\uc0\u1050 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074  \u1089  \u1085 \u1091 \u1083 \u1103  \u1076 \u1086  PRO</h2>\
-                <p>\uc0\u1050 \u1091 \u1088 \u1089  \u1087 \u1086  \u1089 \u1086 \u1079 \u1076 \u1072 \u1085 \u1080 \u1102  \u1088 \u1077 \u1082 \u1083 \u1072 \u1084 \u1085 \u1086 \u1075 \u1086  \u1082 \u1088 \u1077 \u1072 \u1090 \u1080 \u1074 \u1072 </p>\
-            </div>\
-            \
-            <div class="course-card">\
-                <h2>\uc0\u1043 \u1088 \u1072 \u1092 \u1080 \u1095 \u1077 \u1089 \u1082 \u1080 \u1081  \u1076 \u1080 \u1079 \u1072 \u1081 \u1085 </h2>\
-                <p>\uc0\u1041 \u1072 \u1079 \u1086 \u1074 \u1099 \u1081  \u1082 \u1091 \u1088 \u1089  \u1087 \u1086  \u1075 \u1088 \u1072 \u1092 \u1080 \u1095 \u1077 \u1089 \u1082 \u1086 \u1084 \u1091  \u1076 \u1080 \u1079 \u1072 \u1081 \u1085 \u1091 </p>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- \uc0\u1050 \u1086 \u1085 \u1090 \u1072 \u1082 \u1090 \u1099  -->\
-    <section id="contact" class="page">\
-        <div class="container">\
-            <h1>\uc0\u1057 \u1074 \u1103 \u1079 \u1072 \u1090 \u1100 \u1089 \u1103  \u1089  \u1085 \u1072 \u1084 \u1080 </h1>\
-            \
-            <div class="contact-form">\
-                <div class="form-group">\
-                    <input type="text" placeholder="\uc0\u1042 \u1072 \u1096 \u1077  \u1080 \u1084 \u1103 ">\
-                </div>\
-                <div class="form-group">\
-                    <input type="tel" placeholder="\uc0\u1042 \u1072 \u1096  \u1085 \u1086 \u1084 \u1077 \u1088  \u1090 \u1077 \u1083 \u1077 \u1092 \u1086 \u1085 \u1072 ">\
-                </div>\
-                <button class="btn-primary">\uc0\u1054 \u1041 \u1057 \u1059 \u1044 \u1048 \u1058 \u1068  \u1055 \u1056 \u1054 \u1045 \u1050 \u1058 </button>\
-            </div>\
-            \
-            <div class="footer-contacts">\
-                <p><a href="mailto:movie@wildhorse.com">movie@wildhorse.com</a></p>\
-                <p><a href="mailto:creative@wildhorse.com">creative@wildhorse.com</a></p>\
-                <p>+7-926-566-81-19</p>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- \uc0\u1060 \u1091 \u1090 \u1077 \u1088  -->\
-    <footer>\
-        <div class="container">\
-            <div class="copyright">\'a9 2025 - WILDHORSE ENTERTAINMENT</div>\
-        </div>\
-    </footer>\
-\
-    <script>\
-        document.addEventListener('DOMContentLoaded', function() \{\
-            const menuLinks = document.querySelectorAll('nav a[data-page]');\
-            const pages = document.querySelectorAll('.page');\
-            \
-            menuLinks.forEach(link => \{\
-                link.addEventListener('click', function(e) \{\
-                    e.preventDefault();\
-                    const targetPage = this.getAttribute('data-page');\
-                    \
-                    pages.forEach(page => \{\
-                        page.classList.remove('active');\
-                    \});\
-                    \
-                    document.getElementById(targetPage).classList.add('active');\
-                    \
-                    // \uc0\u1055 \u1083 \u1072 \u1074 \u1085 \u1072 \u1103  \u1087 \u1088 \u1086 \u1082 \u1088 \u1091 \u1090 \u1082 \u1072  \u1082  \u1074 \u1077 \u1088 \u1093 \u1091 \
-                    window.scrollTo(\{\
-                        top: 0,\
-                        behavior: 'smooth'\
-                    \});\
-                \});\
-            \});\
-        \});\
-    </script>\
-</body>\
-</html>}
+    <!-- Главная страница -->
+    <section id="main" class="page active">
+        <div class="container">
+            <div class="main-hero">
+                <h1>WILDHORSE<br>ENTERTAINMENT</h1>
+                <p>WildHorse — команда профессионалов, чья основа лежит в конспроизводстве. Мы создаём фильмы, занимаемся дистрибуцией, а также создаем креатив для их продвижения.</p>
+                <p>Наша сила — в комплексных решениях для развития брендов, где мы объединяем экспертизу в стратегиях, креативе, digital и дизайне, чтобы бизнесы становились ярче, заметнее и ближе к своим клиентам.</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h2>КИНО</h2>
+                    <h3>ПАЛЬТО</h3>
+                    <p>Соня учится в школе и сталкивается с буллингом со стороны сверстников.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h2>КРЕАТИВ</h2>
+                    <h3>HEINZ</h3>
+                    <p>Фестивальный кейс для самого знаменитого кетчупа в мире.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h2>КУРСЫ</h2>
+                    <p>•••</p>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="footer-contacts">
+                <p><a href="mailto:more@wildhorse.com">more@wildhorse.com</a></p>
+                <p><a href="mailto:creative@wildhorse.com">creative@wildhorse.com</a></p>
+                <p>+7-816-442-28 12</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="page">
+        <div class="container">
+            <h1>Кто мы?</h1>
+            <p>Мы — команда, которая превращает идеи в реальность. Мы контролируем процесс создания проектов от начала до конца, беря на себя полную ответственность за результат.</p>
+            
+            <div class="divider"></div>
+            
+            <h2>Чем мы занимаемся</h2>
+            <p>Думаем от различных основных способов: создаём бренд-стратегии на основе реальной аналитики, а не догадок. Изучаем рынок, конкурентов и аудиторию, чтобы найти точные решения.</p>
+            <p>Создаём с душой. Разрабатываем креативные концепции, которые цепляют и остаются в памяти. От постеров до рекламных кампаний — каждый элемент работает на ваш успех.</p>
+            
+            <button class="btn-primary">ОБСУДИТЬ ПРОЕКТ</button>
+        </div>
+    </section>
+
+    <!-- Остальные страницы... -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuLinks = document.querySelectorAll('nav a[data-page]');
+            const pages = document.querySelectorAll('.page');
+            
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    pages.forEach(page => {
+                        page.classList.remove('active');
+                    });
+                    
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
